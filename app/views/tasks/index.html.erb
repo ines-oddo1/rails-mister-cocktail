@@ -1,0 +1,12 @@
+<h1>My Cocktails</h1>
+<% @cocktails.each do |cocktail|  %>
+  <p>
+    <% completed = cocktail.completed ? "[X]" : "[]"  %>
+    <%= completed %>
+    <%= link_to cocktail.title, cocktail_path(cocktail) %>
+  </p>
+  <%= link_to 'Edit Cocktail', edit_cocktail_path(cocktail) %>
+  <%= link_to 'Delete Cocktail', delete_cocktail_path(cocktail) %>
+<% end %>
+<br/>
+  <%= link_to 'New Cocktail', new_cocktail_path %>
